@@ -10,5 +10,8 @@
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
       <Value Profile="(Default)">Data Source=CY\SQLEXPRESS;Initial Catalog=DB_DATA;Integrated Security=True</Value>
     </Setting>
+    <Setting Name="id" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

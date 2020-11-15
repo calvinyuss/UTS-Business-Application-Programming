@@ -13,8 +13,14 @@ namespace DAL
     {
         public string connectionString { get; set; }
         public SqlConnection connection { get; set; }
+        public SqlDataAdapter sqlAdapter { get; set; }
 
         public Connection()
+        {
+            setConnection();
+        }
+
+        public void setConnection()
         {
             this.connectionString = System.Configuration.ConfigurationManager.ConnectionStrings["DB_DATA"].ConnectionString;
             this.connection = new SqlConnection(this.connectionString);

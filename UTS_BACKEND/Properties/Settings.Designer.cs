@@ -32,5 +32,17 @@ namespace UTS_BACKEND.Properties {
                 return ((string)(this["DB_DATAConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool id {
+            get {
+                return ((bool)(this["id"]));
+            }
+            set {
+                this["id"] = value;
+            }
+        }
     }
 }

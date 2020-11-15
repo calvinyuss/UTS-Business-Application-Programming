@@ -33,6 +33,10 @@
             this.tabOrder = new System.Windows.Forms.TabPage();
             this.tabTable = new System.Windows.Forms.TabPage();
             this.tabMenu = new System.Windows.Forms.TabPage();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.columnId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.btnUpdate = new System.Windows.Forms.Button();
@@ -58,11 +62,11 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tabControl = new System.Windows.Forms.TabControl();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.columnId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columnName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columnPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.tableControrlGroup1 = new UTS_BACKEND.TableControrlGroup();
+            this.tabTable.SuspendLayout();
             this.tabMenu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
@@ -70,7 +74,7 @@
             this.tableLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
             this.tabControl.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // openFileDialog1
@@ -97,6 +101,7 @@
             // 
             // tabTable
             // 
+            this.tabTable.Controls.Add(this.groupBox3);
             this.tabTable.Location = new System.Drawing.Point(4, 29);
             this.tabTable.Name = "tabTable";
             this.tabTable.Padding = new System.Windows.Forms.Padding(3);
@@ -118,6 +123,50 @@
             this.tabMenu.TabIndex = 0;
             this.tabMenu.Text = "Menu";
             this.tabMenu.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.columnId,
+            this.columnName,
+            this.columnPrice});
+            this.dataGridView1.Location = new System.Drawing.Point(465, 19);
+            this.dataGridView1.MultiSelect = false;
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(505, 480);
+            this.dataGridView1.TabIndex = 5;
+            this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
+            // 
+            // columnId
+            // 
+            this.columnId.HeaderText = "ID";
+            this.columnId.MinimumWidth = 6;
+            this.columnId.Name = "columnId";
+            this.columnId.ReadOnly = true;
+            this.columnId.Width = 50;
+            // 
+            // columnName
+            // 
+            this.columnName.HeaderText = "Name";
+            this.columnName.MinimumWidth = 6;
+            this.columnName.Name = "columnName";
+            this.columnName.ReadOnly = true;
+            this.columnName.Width = 200;
+            // 
+            // columnPrice
+            // 
+            this.columnPrice.HeaderText = "Price";
+            this.columnPrice.MinimumWidth = 6;
+            this.columnPrice.Name = "columnPrice";
+            this.columnPrice.ReadOnly = true;
+            this.columnPrice.Width = 200;
             // 
             // groupBox2
             // 
@@ -379,49 +428,24 @@
             this.tabControl.Size = new System.Drawing.Size(986, 553);
             this.tabControl.TabIndex = 0;
             // 
-            // dataGridView1
+            // groupBox3
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.columnId,
-            this.columnName,
-            this.columnPrice});
-            this.dataGridView1.Location = new System.Drawing.Point(465, 19);
-            this.dataGridView1.MultiSelect = false;
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(505, 480);
-            this.dataGridView1.TabIndex = 5;
-            this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
+            this.groupBox3.Controls.Add(this.tableControrlGroup1);
+            this.groupBox3.Location = new System.Drawing.Point(8, 6);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(492, 300);
+            this.groupBox3.TabIndex = 0;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Table";
             // 
-            // columnId
+            // tableControrlGroup1
             // 
-            this.columnId.HeaderText = "ID";
-            this.columnId.MinimumWidth = 6;
-            this.columnId.Name = "columnId";
-            this.columnId.ReadOnly = true;
-            this.columnId.Width = 50;
-            // 
-            // columnName
-            // 
-            this.columnName.HeaderText = "Name";
-            this.columnName.MinimumWidth = 6;
-            this.columnName.Name = "columnName";
-            this.columnName.ReadOnly = true;
-            this.columnName.Width = 200;
-            // 
-            // columnPrice
-            // 
-            this.columnPrice.HeaderText = "Price";
-            this.columnPrice.MinimumWidth = 6;
-            this.columnPrice.Name = "columnPrice";
-            this.columnPrice.ReadOnly = true;
-            this.columnPrice.Width = 200;
+            this.tableControrlGroup1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableControrlGroup1.Location = new System.Drawing.Point(3, 23);
+            this.tableControrlGroup1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tableControrlGroup1.Name = "tableControrlGroup1";
+            this.tableControrlGroup1.Size = new System.Drawing.Size(486, 274);
+            this.tableControrlGroup1.TabIndex = 0;
             // 
             // AdminPage
             // 
@@ -432,9 +456,11 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "AdminPage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Admin";
+            this.Text = "Dashboard Admin";
             this.Load += new System.EventHandler(this.AdminPage_Load);
+            this.tabTable.ResumeLayout(false);
             this.tabMenu.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
@@ -444,7 +470,7 @@
             this.tableLayoutPanel1.PerformLayout();
             this.flowLayoutPanel2.ResumeLayout(false);
             this.tabControl.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.groupBox3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -484,5 +510,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn columnId;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnName;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnPrice;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private TableControrlGroup tableControrlGroup1;
     }
 }
