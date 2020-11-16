@@ -280,5 +280,11 @@ namespace UTS_FRONTEND
                 tableLayoutPanel1.RowStyles.Add(new RowStyle(System.Windows.Forms.SizeType.Absolute, 100F));
             }
         }
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            dataGridView1.Rows.Clear();
+            textBox1.Text = "";
+        }
     }
 }

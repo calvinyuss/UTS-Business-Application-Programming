@@ -66,7 +66,7 @@ namespace DAL.BLL
                 }
                 catch (Exception ex)
                 {
-
+                    throw new Exception(ex.Message);
                 }
                 finally
                 {
@@ -126,7 +126,7 @@ namespace DAL.BLL
         public DataSet getOrderItem()
         {
             string queryString =
-            @"SELECT order_items.id as id, name, quantity, unit_price 
+            @"SELECT order_items.id as id, name, quantity, unit_price, create_at
                 FROM order_items
                 INNER JOIN menus
                 ON menus.id = order_items.menu_id;";
