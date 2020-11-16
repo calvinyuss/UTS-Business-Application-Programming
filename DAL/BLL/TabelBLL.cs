@@ -52,21 +52,42 @@ namespace DAL.BLL
 
         public void insert(string tableNumber)
         {
-            try
+
+            if (isTableAlreadyExists(tableNumber)) throw new Exception("Table Number Already Exists");
+
+            setConnection();
+            string query = "INSERT INTO tables(table_number) VALUES(@table_number);SELECT SCOPE_IDENTITY()";
+            using (connection)
             {
-                if (isTableAlreadyExists(tableNumber)) throw new Exception("Table Number Already Exists");
+                try
+                {
+                    connection.Open();
 
-                DataRow row = ds.Tables["table"].NewRow();
+                    SqlCommand command = new SqlCommand(query, connection);
 
-                row["table_number"] = tableNumber;
+                    sqlAdapter = new SqlDataAdapter(command);
 
-                ds.Tables["table"].Rows.Add(row);
+                    command.Parameters.Clear();
+                    command.Parameters.AddWithValue("@table_number", tableNumber);
 
-                updateToDatabase();
-            }
-            catch(Exception ex)
-            {
-                throw new Exception(ex.Message);
+                    int id = Convert.ToInt32(command.ExecuteScalar());
+
+                    DataRow row = ds.Tables["table"].NewRow();
+
+                    row["id"] = id;
+                    row["table_number"] = tableNumber;
+
+                    ds.Tables["table"].Rows.Add(row);
+
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.StackTrace);
+                }
+                finally
+                {
+                    connection.Close();
+                }
             }
         }
 
@@ -130,7 +151,7 @@ namespace DAL.BLL
                 {
                     connection.Close();
                 }
-        }
+            }
         }
 
         /*public DataTable getDataTabel()
