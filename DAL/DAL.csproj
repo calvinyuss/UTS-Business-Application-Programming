@@ -58,6 +58,7 @@
     <Compile Include="BLL\Helper.cs" />
     <Compile Include="BLL\ImageServices.cs" />
     <Compile Include="BLL\MenuBLL.cs" />
+    <Compile Include="BLL\OrderBLL.cs" />
     <Compile Include="BLL\TabelBLL.cs" />
     <Compile Include="Connection.cs" />
     <Compile Include="Menu.cs">

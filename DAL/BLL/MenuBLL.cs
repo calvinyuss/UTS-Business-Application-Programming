@@ -29,6 +29,174 @@ namespace DAL.BLL
             return menus.ToList();
         }
 
+        public List<Menu> fetchMenuSortByNameAsc()
+        {
+            DB_DATAEntities _db = new DB_DATAEntities();
+
+
+            IQueryable<Menu> menus = from menu in _db.Menus
+                                     where menu.deleted_at == null
+                                     orderby menu.name ascending
+                                     select menu;
+
+            return menus.ToList();
+        }
+
+        public List<Menu> fetchMenuSortByNameDesc()
+        {
+            DB_DATAEntities _db = new DB_DATAEntities();
+
+
+            IQueryable<Menu> menus = from menu in _db.Menus
+                                     where menu.deleted_at == null
+                                     orderby menu.name descending
+                                     select menu;
+
+            return menus.ToList();
+        }
+
+        public List<Menu> fetchMenuSortByPriceDesc()
+        {
+            DB_DATAEntities _db = new DB_DATAEntities();
+
+
+            IQueryable<Menu> menus = from menu in _db.Menus
+                                     where menu.deleted_at == null
+                                     orderby menu.price descending
+                                     select menu;
+
+            return menus.ToList();
+        }
+
+        public List<Menu> fetchMenuSortByPriceAsc()
+        {
+            DB_DATAEntities _db = new DB_DATAEntities();
+
+
+            IQueryable<Menu> menus = from menu in _db.Menus
+                                     where menu.deleted_at == null
+                                     orderby menu.price ascending
+                                     select menu;
+
+            return menus.ToList();
+        }
+
+        public Menu getMenu(int id)
+        {
+            DB_DATAEntities _db = new DB_DATAEntities();
+            IQueryable<Menu> menus = from menu in _db.Menus
+                                     where (menu.deleted_at == null) && (menu.id == id)
+                                     select menu;
+            return menus.FirstOrDefault();
+        }
+
+
+        public List<Menu> topSales()
+        {
+            List<Menu> menus = new List<Menu>();
+            string queryString =
+            @"SELECT id, name, price, img_url 
+                FROM
+                (
+                    SELECT menu_id, COUNT(menu_id) as sale
+
+                    FROM order_items    
+
+                    GROUP BY menu_id
+                ) AS weeklyMenuSales
+                INNER JOIN menus
+                on menus.id = weeklyMenuSales.menu_id
+                WHERE menus.deleted_at IS NULL
+                ORDER BY sale DESC";
+
+            using (connection)
+            {
+                // Create the Command and Parameter objects.
+                SqlCommand command = new SqlCommand(queryString, connection);
+
+                // Open the connection in a try/catch block.
+                // Create and execute the DataReader, writing the result
+                // set to the console window.
+                try
+                {
+                    connection.Open();
+                    SqlDataReader reader = command.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        DAL.Menu menu = new DAL.Menu();
+
+                        menu.id = (int)reader[0];
+                        menu.name = (string)reader[1];
+                        menu.price = (decimal)reader[2];
+                        menu.img_url = (string)reader[3];
+
+                        menus.Add(menu);
+                    }
+                    reader.Close();
+
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
+                return menus;
+            }
+
+        }
+
+        public List<Menu> getWeeklyTopSales(){
+            List<Menu> menus = new List<Menu>();
+            string queryString =
+            @"SELECT id, name, price, img_url 
+                FROM
+                (
+                    SELECT menu_id, COUNT(menu_id) as sale
+
+                    FROM order_items
+
+                    WHERE create_at BETWEEN dateadd(day, -7, getdate()) AND getdate()
+
+                    GROUP BY menu_id
+                ) AS weeklyMenuSales
+                INNER JOIN menus
+                on menus.id = weeklyMenuSales.menu_id
+                WHERE menus.deleted_at IS NULL
+                ORDER BY sale DESC";
+
+            using (connection)
+            {
+                // Create the Command and Parameter objects.
+                SqlCommand command = new SqlCommand(queryString, connection);
+
+                // Open the connection in a try/catch block.
+                // Create and execute the DataReader, writing the result
+                // set to the console window.
+                try
+                {
+                    connection.Open();
+                    SqlDataReader reader = command.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        DAL.Menu menu = new DAL.Menu();
+
+                        menu.id = (int)reader[0];
+                        menu.name = (string)reader[1];
+                        menu.price = (decimal)reader[2];
+                        menu.img_url = (string)reader[3];
+
+                        menus.Add(menu);
+                    }
+                    reader.Close();
+
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
+                   return menus;
+            }
+        }
+
         public void handleCreate(string name, double price, string url_image)
         {
             try

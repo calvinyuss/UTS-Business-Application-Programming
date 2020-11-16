@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UTS_BACKEND", "UTS_BACKEND\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "DAL\DAL.csproj", "{16C79E7E-EC32-4725-BEE4-F0E6C67A122E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UTS_FRONTEND", "UTS_FRONTEND\UTS_FRONTEND.csproj", "{5264A15B-FE13-4989-8EFE-3BF048F01BCC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{16C79E7E-EC32-4725-BEE4-F0E6C67A122E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{16C79E7E-EC32-4725-BEE4-F0E6C67A122E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{16C79E7E-EC32-4725-BEE4-F0E6C67A122E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5264A15B-FE13-4989-8EFE-3BF048F01BCC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5264A15B-FE13-4989-8EFE-3BF048F01BCC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5264A15B-FE13-4989-8EFE-3BF048F01BCC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5264A15B-FE13-4989-8EFE-3BF048F01BCC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

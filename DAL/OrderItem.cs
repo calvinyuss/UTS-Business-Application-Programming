@@ -14,7 +14,7 @@ namespace DAL
     
     public partial class OrderItem
     {
-        public long id { get; set; }
+        public int id { get; set; }
         public int order_id { get; set; }
         public int menu_id { get; set; }
         public byte quantity { get; set; }
