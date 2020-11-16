@@ -22,20 +22,20 @@ namespace UTS_BACKEND
 
         private void TableControrlGroup_Load(object sender, EventArgs e)
         {
-            tableBLL = new TableBLL();
-            bindingSource.DataSource = tableBLL.ds;
-            dataGridView1.DataSource = bindingSource;
-            dataGridView1.DataMember = "table";
+            //tableBLL = new TableBLL();
+            //bindingSource.DataSource = tableBLL.ds;
+            //dataGridView1.DataSource = bindingSource;
+            //dataGridView1.DataMember = "table";
 
-            textBoxUpdateId.DataBindings.Add("Text", bindingSource, "table.id", true, DataSourceUpdateMode.OnPropertyChanged);
-            textUpdateTableNumber.DataBindings.Add("Text", bindingSource, "table.table_number");
+            //textBoxUpdateId.DataBindings.Add("Text", bindingSource, "table.id", true, DataSourceUpdateMode.OnPropertyChanged);
+            //textUpdateTableNumber.DataBindings.Add("Text", bindingSource, "table.table_number");
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             try
             {
-                tableBLL.update(textBoxUpdateId.Text.ToString(),textUpdateTableNumber.Text.ToString());
+                tableBLL.update(textBoxUpdateId.Text.ToString(), textUpdateTableNumber.Text.ToString());
             }
             catch (Exception ex)
             {

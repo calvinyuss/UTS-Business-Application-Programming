@@ -74,5 +74,133 @@ namespace DAL.BLL
                 }
             }
         }
+
+        public DataSet getTopOrder()
+        {
+            string queryString =
+            @"SELECT id as 'Menu ID', name, sale as 'Sold'
+                FROM
+                (
+                    SELECT menu_id, COUNT(menu_id) as sale
+
+                    FROM order_items    
+
+                    GROUP BY menu_id
+                ) AS weeklyMenuSales
+                INNER JOIN menus
+                on menus.id = weeklyMenuSales.menu_id
+                WHERE menus.deleted_at IS NULL
+                ORDER BY sale DESC";
+
+            DataSet ds = new DataSet();
+            using (connection)
+            {
+                // Create the Command and Parameter objects.
+                SqlCommand command = new SqlCommand(queryString, connection);
+
+                // Open the connection in a try/catch block.
+                // Create and execute the DataReader, writing the result
+                // set to the console window.
+                try
+                {
+                    connection.Open();
+
+                    sqlAdapter = new SqlDataAdapter(command);
+
+
+                    SqlCommandBuilder sqlCmdBuilder = new SqlCommandBuilder(sqlAdapter);
+
+                    sqlAdapter.FillSchema(ds, SchemaType.Source, "topOrder");
+
+                    sqlAdapter.Fill(ds, "topOrder");
+
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
+                return ds;
+            }
+        }
+
+        public DataSet getOrderItem()
+        {
+            string queryString =
+            @"SELECT order_items.id as id, name, quantity, unit_price 
+                FROM order_items
+                INNER JOIN menus
+                ON menus.id = order_items.menu_id;";
+
+            DataSet ds = new DataSet();
+            using (connection)
+            {
+                // Create the Command and Parameter objects.
+                SqlCommand command = new SqlCommand(queryString, connection);
+
+                // Open the connection in a try/catch block.
+                // Create and execute the DataReader, writing the result
+                // set to the console window.
+                try
+                {
+                    connection.Open();
+
+                    sqlAdapter = new SqlDataAdapter(command);
+
+
+                    SqlCommandBuilder sqlCmdBuilder = new SqlCommandBuilder(sqlAdapter);
+
+                    sqlAdapter.FillSchema(ds, SchemaType.Source, "orderItem");
+
+                    sqlAdapter.Fill(ds, "orderItem");
+
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
+                return ds;
+            }
+        }
+
+        public DataSet getPaymentOrder()
+        {
+            string queryString =
+            @"SELECT order_id, payments.id as 'payment id', table_number as 'table number', amount, status, created_at
+                FROM payments
+                INNER JOIN orders
+                ON payments.order_id = orders.id
+                INNER JOIN tables
+                ON tables.id = orders.table_id";
+
+            DataSet ds = new DataSet();
+            using (connection)
+            {
+                // Create the Command and Parameter objects.
+                SqlCommand command = new SqlCommand(queryString, connection);
+
+                // Open the connection in a try/catch block.
+                // Create and execute the DataReader, writing the result
+                // set to the console window.
+                try
+                {
+                    connection.Open();
+
+                    sqlAdapter = new SqlDataAdapter(command);
+
+
+                    SqlCommandBuilder sqlCmdBuilder = new SqlCommandBuilder(sqlAdapter);
+
+                    sqlAdapter.FillSchema(ds, SchemaType.Source, "paymentOrder");
+                   
+                    sqlAdapter.Fill(ds, "paymentOrder");
+
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
+                return ds;
+            }
+        }
     }
 }

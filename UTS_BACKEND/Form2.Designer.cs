@@ -32,6 +32,7 @@
             this.tabPayment = new System.Windows.Forms.TabPage();
             this.tabOrder = new System.Windows.Forms.TabPage();
             this.tabTable = new System.Windows.Forms.TabPage();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.tabMenu = new System.Windows.Forms.TabPage();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.columnId = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -62,9 +63,15 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tabControl = new System.Windows.Forms.TabControl();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.tableControrlGroup1 = new UTS_BACKEND.TableControrlGroup();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.dataGridView4 = new System.Windows.Forms.DataGridView();
             this.tabTable.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.tabMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -74,7 +81,12 @@
             this.tableLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
             this.tabControl.SuspendLayout();
-            this.groupBox3.SuspendLayout();
+            this.groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            this.groupBox5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            this.groupBox6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
             this.SuspendLayout();
             // 
             // openFileDialog1
@@ -101,6 +113,9 @@
             // 
             // tabTable
             // 
+            this.tabTable.Controls.Add(this.groupBox6);
+            this.tabTable.Controls.Add(this.groupBox5);
+            this.tabTable.Controls.Add(this.groupBox4);
             this.tabTable.Controls.Add(this.groupBox3);
             this.tabTable.Location = new System.Drawing.Point(4, 29);
             this.tabTable.Name = "tabTable";
@@ -109,6 +124,16 @@
             this.tabTable.TabIndex = 1;
             this.tabTable.Text = "Tables";
             this.tabTable.UseVisualStyleBackColor = true;
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.tableControrlGroup1);
+            this.groupBox3.Location = new System.Drawing.Point(8, 6);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(492, 300);
+            this.groupBox3.TabIndex = 0;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Table";
             // 
             // tabMenu
             // 
@@ -428,24 +453,87 @@
             this.tabControl.Size = new System.Drawing.Size(986, 553);
             this.tabControl.TabIndex = 0;
             // 
-            // groupBox3
+            // groupBox4
             // 
-            this.groupBox3.Controls.Add(this.tableControrlGroup1);
-            this.groupBox3.Location = new System.Drawing.Point(8, 6);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(492, 300);
-            this.groupBox3.TabIndex = 0;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Table";
+            this.groupBox4.Controls.Add(this.dataGridView2);
+            this.groupBox4.Location = new System.Drawing.Point(6, 310);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(378, 202);
+            this.groupBox4.TabIndex = 1;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Sold";
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.AllowUserToAddRows = false;
+            this.dataGridView2.AllowUserToDeleteRows = false;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView2.Location = new System.Drawing.Point(3, 23);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.ReadOnly = true;
+            this.dataGridView2.RowHeadersVisible = false;
+            this.dataGridView2.RowHeadersWidth = 51;
+            this.dataGridView2.RowTemplate.Height = 24;
+            this.dataGridView2.Size = new System.Drawing.Size(372, 176);
+            this.dataGridView2.TabIndex = 0;
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.dataGridView3);
+            this.groupBox5.Location = new System.Drawing.Point(390, 310);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(580, 202);
+            this.groupBox5.TabIndex = 2;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Orders";
+            // 
+            // dataGridView3
+            // 
+            this.dataGridView3.AllowUserToAddRows = false;
+            this.dataGridView3.AllowUserToDeleteRows = false;
+            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView3.Location = new System.Drawing.Point(3, 23);
+            this.dataGridView3.Name = "dataGridView3";
+            this.dataGridView3.ReadOnly = true;
+            this.dataGridView3.RowHeadersVisible = false;
+            this.dataGridView3.RowHeadersWidth = 51;
+            this.dataGridView3.RowTemplate.Height = 24;
+            this.dataGridView3.Size = new System.Drawing.Size(574, 176);
+            this.dataGridView3.TabIndex = 0;
             // 
             // tableControrlGroup1
             // 
             this.tableControrlGroup1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableControrlGroup1.Location = new System.Drawing.Point(3, 23);
-            this.tableControrlGroup1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tableControrlGroup1.Margin = new System.Windows.Forms.Padding(4);
             this.tableControrlGroup1.Name = "tableControrlGroup1";
             this.tableControrlGroup1.Size = new System.Drawing.Size(486, 274);
             this.tableControrlGroup1.TabIndex = 0;
+            // 
+            // groupBox6
+            // 
+            this.groupBox6.Controls.Add(this.dataGridView4);
+            this.groupBox6.Location = new System.Drawing.Point(504, 6);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(461, 300);
+            this.groupBox6.TabIndex = 3;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "Order Item";
+            // 
+            // dataGridView4
+            // 
+            this.dataGridView4.AllowUserToAddRows = false;
+            this.dataGridView4.AllowUserToDeleteRows = false;
+            this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView4.Location = new System.Drawing.Point(3, 23);
+            this.dataGridView4.Name = "dataGridView4";
+            this.dataGridView4.ReadOnly = true;
+            this.dataGridView4.RowHeadersWidth = 51;
+            this.dataGridView4.Size = new System.Drawing.Size(455, 274);
+            this.dataGridView4.TabIndex = 0;
             // 
             // AdminPage
             // 
@@ -459,6 +547,7 @@
             this.Text = "Dashboard Admin";
             this.Load += new System.EventHandler(this.AdminPage_Load);
             this.tabTable.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
             this.tabMenu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox2.ResumeLayout(false);
@@ -470,7 +559,12 @@
             this.tableLayoutPanel1.PerformLayout();
             this.flowLayoutPanel2.ResumeLayout(false);
             this.tabControl.ResumeLayout(false);
-            this.groupBox3.ResumeLayout(false);
+            this.groupBox4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            this.groupBox5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            this.groupBox6.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -512,5 +606,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn columnPrice;
         private System.Windows.Forms.GroupBox groupBox3;
         private TableControrlGroup tableControrlGroup1;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.DataGridView dataGridView3;
+        private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.DataGridView dataGridView4;
     }
 }

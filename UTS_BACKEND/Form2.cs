@@ -23,6 +23,13 @@ namespace UTS_BACKEND
         {
             menus = new MenuBLL().fetchMenu();
             addToTable(menus);
+
+            dataGridView2.DataSource = new OrderBLL().getTopOrder();
+            dataGridView2.DataMember = "topOrder";
+            dataGridView3.DataSource = new OrderBLL().getPaymentOrder();
+            dataGridView3.DataMember = "paymentOrder";
+            dataGridView4.DataSource = new OrderBLL().getOrderItem();
+            dataGridView4.DataMember = "orderItem";
         }
 
         private void buttonAddFoto_Click(object sender, EventArgs e)
