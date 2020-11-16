@@ -184,6 +184,7 @@ namespace UTS_FRONTEND
             orderBLL.createOrder(tableID, orderItems);
 
             textBox1.AppendText("Payment Details\n");
+            textBox1.AppendText("Table Number : "+tableNumber+"\n");
             textBox1.AppendText(String.Format("Payment ID: {0}\n", orderBLL.lastCreatedPaymentID ));
             textBox1.AppendText("Order List:\n");
             int totalPrice = 0;
