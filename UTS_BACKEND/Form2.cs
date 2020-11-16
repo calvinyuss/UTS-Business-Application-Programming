@@ -77,16 +77,10 @@ namespace UTS_BACKEND
 
         private void btnPreviewAddFoto_Click(object sender, EventArgs e)
         {
-            Console.WriteLine(urlFotoAdd);
-        }
+            PreviewImageDialog previewDialog = new PreviewImageDialog();
 
-        /**
-         * Menampilkan foto dari file yang kita upload
-         * @param state - update or add
-         */
-
-        private void showFoto(string state)
-        {
+            previewDialog.addImage(urlFotoAdd);
+            previewDialog.ShowDialog();
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -176,7 +170,7 @@ namespace UTS_BACKEND
             textUpdateID.Text = menu.id.ToString();
             textUpdateNama.Text = menu.name;
             textUpdateHarga.Text = menu.price.ToString();
-            urlFotoUpdate = @"resources\images\"+menu.img_url;
+            urlFotoUpdate = @"\resources\images\"+menu.img_url;
         }
 
         /**

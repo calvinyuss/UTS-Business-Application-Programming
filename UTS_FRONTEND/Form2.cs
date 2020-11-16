@@ -51,7 +51,7 @@ namespace UTS_FRONTEND
 
                 lblName.Text = "Nama: " + menus[i].name;
                 lblPrice.Text = "Harga: " + menus[i].price.ToString("N0");
-                string imageUrl = @"resources\images\" + menus[i].img_url;
+                string imageUrl = @"\resources\images\" + menus[i].img_url;
 
                 PictureBox picture = new PictureBox();
                 picture.Dock = DockStyle.Fill;
@@ -257,7 +257,7 @@ namespace UTS_FRONTEND
 
                 lblName.Text = "Nama: " + menus[i].name;
                 lblPrice.Text = "Harga: " + menus[i].price.ToString("N0");
-                string imageUrl = @"resources\images\" + menus[i].img_url;
+                string imageUrl = @"\resources\images\" + menus[i].img_url;
 
                 PictureBox picture = new PictureBox();
                 picture.Dock = DockStyle.Fill;

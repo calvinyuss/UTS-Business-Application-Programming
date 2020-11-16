@@ -15,7 +15,7 @@ namespace DAL.BLL
     public class ImageServices
     {
         private string imageUrl = null;
-        private string targetDirectory = @"resources\images\";
+        private string targetDirectory = @"\resources\images\";
 
         public string createdFileName { get; set;}
 

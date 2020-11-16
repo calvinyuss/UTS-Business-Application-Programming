@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.tabPayment = new System.Windows.Forms.TabPage();
-            this.tabOrder = new System.Windows.Forms.TabPage();
             this.tabTable = new System.Windows.Forms.TabPage();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.tabMenu = new System.Windows.Forms.TabPage();
@@ -67,9 +65,9 @@
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
-            this.tableControrlGroup1 = new UTS_BACKEND.TableControrlGroup();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.dataGridView4 = new System.Windows.Forms.DataGridView();
+            this.tableControrlGroup1 = new UTS_BACKEND.TableControrlGroup();
             this.tabTable.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.tabMenu.SuspendLayout();
@@ -92,24 +90,6 @@
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
-            // 
-            // tabPayment
-            // 
-            this.tabPayment.Location = new System.Drawing.Point(4, 29);
-            this.tabPayment.Name = "tabPayment";
-            this.tabPayment.Size = new System.Drawing.Size(978, 520);
-            this.tabPayment.TabIndex = 3;
-            this.tabPayment.Text = "Payment";
-            this.tabPayment.UseVisualStyleBackColor = true;
-            // 
-            // tabOrder
-            // 
-            this.tabOrder.Location = new System.Drawing.Point(4, 29);
-            this.tabOrder.Name = "tabOrder";
-            this.tabOrder.Size = new System.Drawing.Size(978, 520);
-            this.tabOrder.TabIndex = 2;
-            this.tabOrder.Text = "Order";
-            this.tabOrder.UseVisualStyleBackColor = true;
             // 
             // tabTable
             // 
@@ -443,8 +423,6 @@
             // 
             this.tabControl.Controls.Add(this.tabMenu);
             this.tabControl.Controls.Add(this.tabTable);
-            this.tabControl.Controls.Add(this.tabOrder);
-            this.tabControl.Controls.Add(this.tabPayment);
             this.tabControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControl.Location = new System.Drawing.Point(0, 0);
@@ -503,15 +481,6 @@
             this.dataGridView3.Size = new System.Drawing.Size(574, 176);
             this.dataGridView3.TabIndex = 0;
             // 
-            // tableControrlGroup1
-            // 
-            this.tableControrlGroup1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableControrlGroup1.Location = new System.Drawing.Point(3, 23);
-            this.tableControrlGroup1.Margin = new System.Windows.Forms.Padding(4);
-            this.tableControrlGroup1.Name = "tableControrlGroup1";
-            this.tableControrlGroup1.Size = new System.Drawing.Size(486, 274);
-            this.tableControrlGroup1.TabIndex = 0;
-            // 
             // groupBox6
             // 
             this.groupBox6.Controls.Add(this.dataGridView4);
@@ -532,8 +501,18 @@
             this.dataGridView4.Name = "dataGridView4";
             this.dataGridView4.ReadOnly = true;
             this.dataGridView4.RowHeadersWidth = 51;
+            this.dataGridView4.RowTemplate.Height = 24;
             this.dataGridView4.Size = new System.Drawing.Size(455, 274);
             this.dataGridView4.TabIndex = 0;
+            // 
+            // tableControrlGroup1
+            // 
+            this.tableControrlGroup1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableControrlGroup1.Location = new System.Drawing.Point(3, 23);
+            this.tableControrlGroup1.Margin = new System.Windows.Forms.Padding(4);
+            this.tableControrlGroup1.Name = "tableControrlGroup1";
+            this.tableControrlGroup1.Size = new System.Drawing.Size(486, 274);
+            this.tableControrlGroup1.TabIndex = 0;
             // 
             // AdminPage
             // 
@@ -571,8 +550,6 @@
 
         #endregion
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
-        private System.Windows.Forms.TabPage tabPayment;
-        private System.Windows.Forms.TabPage tabOrder;
         private System.Windows.Forms.TabPage tabTable;
         private System.Windows.Forms.TabPage tabMenu;
         private System.Windows.Forms.GroupBox groupBox2;
