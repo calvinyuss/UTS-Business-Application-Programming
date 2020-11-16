@@ -56,6 +56,7 @@ namespace UTS_FRONTEND
                 PictureBox picture = new PictureBox();
                 picture.Dock = DockStyle.Fill;
                 picture.ImageLocation = imageUrl;
+                picture.SizeMode = PictureBoxSizeMode.StretchImage;
 
                 Button addBtn = new Button();
                 addBtn.Anchor = System.Windows.Forms.AnchorStyles.Left;
@@ -262,6 +263,7 @@ namespace UTS_FRONTEND
                 PictureBox picture = new PictureBox();
                 picture.Dock = DockStyle.Fill;
                 picture.ImageLocation = imageUrl;
+                picture.SizeMode = PictureBoxSizeMode.StretchImage;
 
                 Button addBtn = new Button();
                 addBtn.Anchor = System.Windows.Forms.AnchorStyles.Left;

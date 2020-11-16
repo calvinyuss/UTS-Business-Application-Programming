@@ -200,7 +200,17 @@ namespace UTS_BACKEND
             }
         }
 
-        
+        private void btnRemove_Click(object sender, EventArgs e)
+        {
+            int position = dataGridView1.CurrentCell.RowIndex;
+            int id = menus[position].id;
+            dataGridView1.Rows.RemoveAt(dataGridView1.CurrentCell.RowIndex);
 
+            new MenuBLL().remove(id);
+
+            menus.RemoveAt(dataGridView1.CurrentCell.RowIndex);
+
+            resetUpdateInput();
+        }
     }
 }

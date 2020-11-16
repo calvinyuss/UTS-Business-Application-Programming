@@ -311,6 +311,28 @@ namespace DAL.BLL
             }
         }
 
+        public void remove(int id)
+        {
+            connection.Open();
+            string query = "UPDATE menus SET deleted_at=getDate() WHERE id=@id";
+            try
+            {
+                SqlCommand command = new SqlCommand(query, connection);
+                command.Parameters.AddWithValue("@id", id);
+
+                command.ExecuteReader();
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
+
         public Menu getLastInsertedData()
         {
             DB_DATAEntities _db = new DB_DATAEntities();
