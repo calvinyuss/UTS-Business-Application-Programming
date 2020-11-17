@@ -1,4 +1,5 @@
-# UTS-Business-Application-Programming - [Lastest Release](https://github.com/calvinyuss/UTS-Business-Application-Programming/releases/tag/v1.0-beta)
+<h1 align="center">UTS-Business-Application-Programming</h1>
+<h1 align="center"> <a href="https://github.com/calvinyuss/UTS-Business-Application-Programming/releases/tag/v1.0-beta">Lastest Release</a> </h1>
 Made to fullfil the Business Application Programming midterm 7 exam.
 
 ## About The Project 
@@ -17,6 +18,9 @@ Of course the first time you need to clone the project, and after clone you can 
 ```
 git clone https://github.com/calvinyuss/UTS-Business-Application-Programming.git
 ```
+
+
+You also can download directly from [here](https://github.com/calvinyuss/UTS-Business-Application-Programming/releases/tag/v1.0-beta)
 
 
 To use the application you need to update the connection string to your server.
