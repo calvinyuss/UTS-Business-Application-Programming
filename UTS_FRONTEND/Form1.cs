@@ -25,7 +25,7 @@ namespace UTS_FRONTEND
             foreach (DataRow row in tabelBLL.ds.Tables["table"].AsEnumerable() )
             {
                 Button button = new Button();
-                button.Text = "Table "+row["id"];
+                button.Text = "Table "+row["table_number"];
                 button.Name = row["id"].ToString();
                 button.Size = new System.Drawing.Size(160, 124);
                 button.UseVisualStyleBackColor = true;
