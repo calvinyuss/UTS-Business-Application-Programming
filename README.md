@@ -1,4 +1,4 @@
-# UTS-Business-Application-Programming
+# UTS-Business-Application-Programming - [Lastest Release](https://github.com/calvinyuss/UTS-Business-Application-Programming/releases/tag/v1.0-beta)
 Made to fullfil the Business Application Programming midterm 7 exam.
 
 ## About The Project 
@@ -35,6 +35,7 @@ Note: you need to login to view the admin page
 username: admin 
 password: password
 ```
+Note: The iamge location will be stored at your drive D `D:\resources\images`
 
 ![Create Menu](https://res.cloudinary.com/cy-uph-student/image/upload/v1605612077/UTS-BAP/1605550102968_ujbxlp.gif)
 ![Update Menu](https://res.cloudinary.com/cy-uph-student/image/upload/v1605612063/UTS-BAP/1605550178443_dqqxl4.gif)
