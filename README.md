@@ -39,7 +39,9 @@ Note: you need to login to view the admin page
 username: admin 
 password: password
 ```
-Note: The iamge location will be stored at your drive D `D:\resources\images`
+Note: The image location will be stored at your drive D `D:\resources\images`
+
+image file you find it ![here](https://github.com/calvinyuss/UTS-Business-Application-Programming/blob/master/resources.rar)
 
 ![Create Menu](https://res.cloudinary.com/cy-uph-student/image/upload/v1605612077/UTS-BAP/1605550102968_ujbxlp.gif)
 ![Update Menu](https://res.cloudinary.com/cy-uph-student/image/upload/v1605612063/UTS-BAP/1605550178443_dqqxl4.gif)
